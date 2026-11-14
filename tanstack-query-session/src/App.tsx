@@ -1,7 +1,10 @@
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import { useTodosData } from "./hooks/useTodosData";
 
 export default function App() {
+  const { data: todos = [], isPending, isError } = useTodosData();
+
   return (
     <main className="todo-card">
       <header className="todo-header">
@@ -15,7 +18,13 @@ export default function App() {
         <h2>할 일 목록</h2>
       </div>
 
-      <TodoList todos={[]} />
+      {isPending ? (
+        <p>로딩 중...</p>
+      ) : isError ? (
+        <p>할 일 목록을 불러오지 못했습니다.</p>
+      ) : (
+        <TodoList todos={todos} />
+      )}
     </main>
   );
 }

@@ -1,0 +1,15 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Exercise",
+      "completed": true
+    },
+    {
+      "title": "용용톤 개발...",
+      "completed": true,
+      "id": "3uMGWfL"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
